@@ -12,8 +12,11 @@ public class TankClient extends Frame {
     public static final int FRAME_HEIGHT = 600;
     Tank myTank;
     {
-        myTank = new Tank(50, 50);
+        // 传入自身的实例
+        myTank = new Tank(50, 50, this);
     }
+    // 子弹
+    public Missle missle = null;
     Image offScreenImage = null;
 
 
@@ -55,10 +58,14 @@ public class TankClient extends Frame {
     // 画出圆形代替坦克
     @Override
     public void paint(Graphics g) {
+        if (missle != null){
+            missle.draw(g);
+        }
         myTank.draw(g);
     }
     /**
      * 调用父类Container类的update方法
+     * 缓解闪烁现象
      * @param g
      */
     @Override
@@ -79,27 +86,25 @@ public class TankClient extends Frame {
 
     public static void main(String[] args) {
         TankClient tankClient = new TankClient();
+
         tankClient.launchFrame();
     }
 
-//    // 让坦克动起来
-//    private class RepaintThread implements Runnable{
-//
-//        @Override
-//        public void run() {
-//            while(true){
-//                com.tank.TankClient.super.repaint();
-//                try {
-//                    Thread.sleep(500);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//    }
-
     public class KeyMonitor extends KeyAdapter {
 
+        /**
+         * 按键松开时的动作
+         * @param e
+         */
+        @Override
+        public void keyReleased(KeyEvent e) {
+            myTank.keyReleased(e);
+        }
+
+        /**
+         * 按键按下时的动作
+         * @param e
+         */
         @Override
         public void keyPressed(KeyEvent e) {
             myTank.keyPressed(e);

@@ -12,13 +12,13 @@ public class Missle {
     public static final int WIDTH = 5, HEIGHT = 5;
     Tank.Direction direction;
 
-    public Missle(int x, int y, Tank.Direction direction) {
+    Missle(int x, int y, Tank.Direction direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
     }
 
-    void draw(Graphics g){
+    public void draw(Graphics g){
         Color color = g.getColor();
         g.setColor(Color.RED);
         g.fillOval(x,y,Missle.WIDTH,Missle.HEIGHT);
@@ -26,7 +26,7 @@ public class Missle {
         move();
     }
 
-    void move(){
+    public void move(){
         switch (direction){
             case LEFT:
                 x -= VerticalVelocity;

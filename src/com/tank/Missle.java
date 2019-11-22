@@ -18,7 +18,7 @@ public class Missle {
         this.direction = direction;
     }
 
-    public void draw(Graphics g){
+    void draw(Graphics g){
         Color color = g.getColor();
         g.setColor(Color.RED);
         g.fillOval(x,y,Missle.WIDTH,Missle.HEIGHT);

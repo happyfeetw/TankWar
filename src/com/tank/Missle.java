@@ -26,7 +26,7 @@ public class Missle {
         move();
     }
 
-    public void move(){
+    void move(){
         switch (direction){
             case LEFT:
                 x -= VerticalVelocity;

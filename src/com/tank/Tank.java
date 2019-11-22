@@ -37,7 +37,7 @@ public class Tank {
     /**
      * 开火方向
      */
-    private Direction fireDirection;
+    private Direction fireDirection = Direction.DOWN;
 
     /**
      * 坦克的初始状态
@@ -83,28 +83,28 @@ public class Tank {
         // 确定开火方向
         switch (fireDirection){
             case LEFT:
-                g.drawLine(x+Tank.WIDTH/2, y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);
+                g.drawLine(x + Tank.WIDTH/2,  y + Tank.HEIGHT/2, x,y + Tank.HEIGHT/2);
                 break;
             case UPPER_LEFT:
-                g.drawLine(x+Tank.WIDTH/2, y+Tank.HEIGHT/2,x,y);
+                g.drawLine(x + Tank.WIDTH/2,  y + Tank.HEIGHT/2, x, y);
                 break;
             case UP:
-                g.drawLine(x+Tank.WIDTH/2, y+Tank.HEIGHT/2,x+Tank.WIDTH/2,y);
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH/2, y);
                 break;
             case UPPER_RIGHT:
-                g.drawLine(x+Tank.WIDTH/2, y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2 ,x + Tank.WIDTH, y);
                 break;
             case RIGHT:
-                g.drawLine(x+Tank.WIDTH/2, y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH,y+Tank.HEIGHT/2);
                 break;
             case DOWN_RIGHT:
-                g.drawLine(x+Tank.WIDTH/2, y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH,y + Tank.HEIGHT);
                 break;
             case DOWN:
-                g.drawLine(x+Tank.WIDTH/2, y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x + Tank.WIDTH/2,y+Tank.HEIGHT);
                 break;
             case DOWN_LEFT:
-                g.drawLine(x+Tank.WIDTH/2, y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);
+                g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x, y + Tank.HEIGHT);
                 break;
         }
 
@@ -226,11 +226,9 @@ public class Tank {
 
 //        // 在坦克圆心发射炮弹的位置
           // todo 考虑实现在坦克朝向的边缘发射炮弹
-//        int x = this.x + Tank.WIDTH/2 - Missle.WIDTH;
-//        int y = this.y + Tank.HEIGHT/2 - Missle.HEIGHT;
+        int x = this.x + Tank.WIDTH/2 - Missle.WIDTH;
+        int y = this.y + Tank.HEIGHT/2 - Missle.HEIGHT;
 
-        Missle missle = new Missle(x, y, dir);
-
-        return missle;
+        return new Missle(x, y, dir);
     }
 }

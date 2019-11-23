@@ -230,7 +230,6 @@ public class Tank {
     }
 
     public Missle fire(){
-
 //        // 在坦克圆心发射炮弹的位置
           // todo 考虑实现在坦克朝向的边缘发射炮弹
         int x = this.x + Tank.WIDTH/2 - Missle.WIDTH;

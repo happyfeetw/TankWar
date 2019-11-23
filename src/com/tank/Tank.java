@@ -204,6 +204,13 @@ public class Tank {
                 x -= VerticalVelocity;
                 y += HorizontalVelocity;
                 break;
+            case STOP:
+                break;
+        }
+
+        // 使炮筒方向随着移动方向改变
+        if (this.dir != Direction.STOP){
+            this.fireDirection = this.dir;
         }
     }
 
@@ -228,7 +235,7 @@ public class Tank {
           // todo 考虑实现在坦克朝向的边缘发射炮弹
         int x = this.x + Tank.WIDTH/2 - Missle.WIDTH;
         int y = this.y + Tank.HEIGHT/2 - Missle.HEIGHT;
-
-        return new Missle(x, y, dir);
+        // 静止状态下坦克也能打出炮弹
+        return new Missle(x, y, fireDirection);
     }
 }

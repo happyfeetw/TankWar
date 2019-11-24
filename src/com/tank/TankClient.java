@@ -19,8 +19,6 @@ public class TankClient extends Frame {
     public Missle missle = null;
     Image offScreenImage = null;
 
-
-
     /**
      * 开启窗口，相当于游戏启动
      */

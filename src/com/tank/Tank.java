@@ -79,7 +79,6 @@ public class Tank {
 //        g.fillArc(100,100,100,100,0,120);
         // 颜色还原
         g.setColor(color);
-
         // 确定开火方向
         switch (fireDirection){
             case LEFT:
@@ -107,7 +106,6 @@ public class Tank {
                 g.drawLine(x + Tank.WIDTH/2, y + Tank.HEIGHT/2, x, y + Tank.HEIGHT);
                 break;
         }
-
         // 坦克移动后更新坦克的位置
         move();
     }
@@ -207,7 +205,6 @@ public class Tank {
             case STOP:
                 break;
         }
-
         // 使炮筒方向随着移动方向改变
         if (this.dir != Direction.STOP){
             this.fireDirection = this.dir;

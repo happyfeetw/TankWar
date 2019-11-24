@@ -6,6 +6,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+/**
+ * tankwar启动类
+ */
 public class TankClient extends Frame {
 
     public static final int FRAME_WIDTH = 800;

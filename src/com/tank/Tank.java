@@ -151,19 +151,19 @@ public class Tank {
         int key = event.getKeyCode();
         switch (key){
             case KeyEvent.VK_LEFT :
-                x -= HorizontalVelocity;
+//                x -= HorizontalVelocity;
                 isLeft = false;
                 break;
             case KeyEvent.VK_UP :
-                y -= VerticalVelocity;
+//                y -= VerticalVelocity;
                 isUp = false;
                 break;
             case KeyEvent.VK_RIGHT :
-                x += HorizontalVelocity;
+//                x += HorizontalVelocity;
                 isRight = false;
                 break;
             case KeyEvent.VK_DOWN :
-                y += VerticalVelocity;
+//                y += VerticalVelocity;
                 isDown = false;
                 break;
         }

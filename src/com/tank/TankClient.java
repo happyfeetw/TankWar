@@ -5,6 +5,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * tankwar启动类
@@ -18,6 +21,9 @@ public class TankClient extends Frame {
         // 传入自身的实例
         myTank = new Tank(50, 50, this);
     }
+
+    // 装子弹的容器
+    List<Missle> missles = new ArrayList<>();
     // 子弹
     public Missle missle = null;
     Image offScreenImage = null;
@@ -59,8 +65,8 @@ public class TankClient extends Frame {
     // 画出圆形代替坦克
     @Override
     public void paint(Graphics g) {
-        if (missle != null){
-            missle.draw(g);
+        for (int i = 0; i < missles.size(); i++) {
+            missle = missles.get(i);
         }
         myTank.draw(g);
     }
@@ -92,7 +98,6 @@ public class TankClient extends Frame {
     }
 
     public class KeyMonitor extends KeyAdapter {
-
         /**
          * 按键松开时的动作
          * @param e

@@ -46,8 +46,11 @@ public class Tank {
 
     public TankClient tc;
 
-
-
+    /**
+     * 坦克的构造方法
+     * @param x
+     * @param y
+     */
     public Tank(int x,int y){
         this.x = x;
         this.y = y;
